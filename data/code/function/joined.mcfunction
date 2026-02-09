@@ -37,7 +37,7 @@ effect give @s night_vision infinite 0 true
 effect give @s fire_resistance infinite 0 true
 attribute @s minecraft:attack_damage base set 0
 attribute @s minecraft:burning_time base set 0
-team join default @s
+team join z_default @s
 execute as @s[tag=is_am] run team join h_am @s
 execute as @s[tag=is_fm] run team join g_fm @s
 execute as @s[tag=is_fm2] run team join f_fm2 @s

@@ -84,9 +84,9 @@ scoreboard objectives add z_show_recipe dummy
 scoreboard objectives add chicken_tp trigger
 
 # default teams
-team add default
-team modify default collisionRule never
-team modify default deathMessageVisibility never
+team add z_default
+team modify z_default collisionRule never
+team modify z_default deathMessageVisibility never
 
 team add spec_head
 team modify spec_head prefix {"text":"<SPEC> ","color": "gray"}
@@ -98,43 +98,44 @@ team modify yellow color yellow
 # prefix teams
 team add a_dev
 team modify a_dev collisionRule never
-team modify a_dev prefix {"text":"ᴅᴇᴠ ","color":"red"}
+team modify a_dev prefix [{"text":"ᴅᴇᴠ ","color":"#CC0000"},{text:"| ",color:dark_gray}]
 team modify a_dev deathMessageVisibility never
+team modify a_dev color red
 
 team add b_recipes
 team modify b_recipes collisionRule never
-team modify b_recipes prefix {"text":"ʀᴇᴄɪᴘᴇѕ ","color":"green"}
+team modify b_recipes prefix [{"text":"ʀᴇᴄɪᴘᴇѕ ","color":"green"},{text:"| ",color:dark_gray}]
 team modify b_recipes deathMessageVisibility never
 
 team add c_artist
 team modify c_artist collisionRule never
-team modify c_artist prefix {"text":"ᴀʀᴛɪѕᴛ ","color":"yellow"}
+team modify c_artist prefix [{"text":"ᴀʀᴛɪѕᴛ ","color":"yellow"},{text:"| ",color:dark_gray}]
 team modify c_artist deathMessageVisibility never
 # is_artist
 
 team add d_tester
 team modify d_tester collisionRule never
-team modify d_tester prefix {"text":"ᴛᴇѕᴛᴇʀ ","color": "aqua"}
+team modify d_tester prefix [{"text":"ᴛᴇѕᴛᴇʀ ","color": "aqua"},{text:"| ",color:dark_gray}]
 team modify d_tester deathMessageVisibility never
 
 team add e_xm
 team modify e_xm collisionRule never
-team modify e_xm prefix {"text":"xᴍ ","color":"#FF33FF"}
+team modify e_xm prefix [{"text":"xᴍ ","color":"#FF33FF"},{text:"| ",color:dark_gray}]
 team modify e_xm deathMessageVisibility never
 
 team add f_fm2
 team modify f_fm2 collisionRule never
-team modify f_fm2 prefix [{"text":"ꜰᴍ","color":"#8888FF"},{"text":"² ","color":"#BA094A"}]
+team modify f_fm2 prefix [{"text":"ꜰᴍ","color":"#8888FF"},{"text":"² ","color":"#BA094A"},{text:"| ",color:dark_gray}]
 team modify f_fm2 deathMessageVisibility never
 
 team add g_fm
 team modify g_fm collisionRule never
-team modify g_fm prefix {"text":"ꜰᴍ ","color":"#8888FF"}
+team modify g_fm prefix [{"text":"ꜰᴍ ","color":"#8888FF"},{text:"| ",color:dark_gray}]
 team modify g_fm deathMessageVisibility never
 
 team add h_am
 team modify h_am collisionRule never
-team modify h_am prefix {"text":"ᴀᴍ ","color":"#98FDB5"}
+team modify h_am prefix [{"text":"ᴀᴍ ","color":"#98FDB5"},{text:"| ",color:dark_gray}]
 team modify h_am deathMessageVisibility never
 
 # auxiliary blocks
