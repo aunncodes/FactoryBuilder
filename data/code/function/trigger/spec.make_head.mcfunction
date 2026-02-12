@@ -4,4 +4,8 @@ data modify entity @n[type=item_display,tag=playerhead.this,distance=..0.1] Cust
 data merge entity @n[type=item_display,tag=playerhead.this,distance=..0.1] {transformation:{left_rotation:[0f,1f,0f,0f]},teleport_duration:2}
 scoreboard players operation @n[type=item_display,tag=playerhead.this,distance=..0.1] id = @s id
 team join spec_head @n[type=item_display,tag=playerhead.this,distance=..0.1]
+visibility @s hide @n[type=item_display,tag=playerhead.this,distance=..0.1]
 tag @n[type=item_display,tag=playerhead.this,distance=..0.1] remove playerhead.this
+
+execute as @s[tag=shrinked] run attribute @s scale base set 1
+execute as @s[tag=shrinked] run return run tag @s remove shrinked
