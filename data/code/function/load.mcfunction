@@ -1,21 +1,21 @@
 # gamerules
-gamerule doMobSpawning false
-gamerule mobGriefing false
-gamerule doFireTick false
-gamerule doImmediateRespawn true
-gamerule keepInventory true
-gamerule doDaylightCycle true
-gamerule doWeatherCycle false
-gamerule randomTickSpeed 0
-gamerule maxCommandChainLength 2147483647
-gamerule maxCommandForkCount 2147483647
-gamerule fallDamage false
-gamerule announceAdvancements false
-gamerule commandBlockOutput false
-gamerule disableElytraMovementCheck true
-gamerule disablePlayerMovementCheck true
-gamerule sendCommandFeedback false
-gamerule locatorBar false
+gamerule minecraft:spawn_mobs false
+gamerule minecraft:mob_griefing false
+gamerule minecraft:fire_spread_radius_around_player 0
+gamerule minecraft:immediate_respawn true
+gamerule minecraft:keep_inventory true
+gamerule minecraft:advance_time true
+gamerule minecraft:advance_weather false
+gamerule minecraft:random_tick_speed 0
+gamerule minecraft:max_command_sequence_length 2147483647
+gamerule minecraft:max_command_forks 2147483647
+gamerule minecraft:fall_damage false
+gamerule minecraft:show_advancement_messages false
+gamerule minecraft:command_block_output false
+gamerule minecraft:elytra_movement_check false
+gamerule minecraft:player_movement_check false
+gamerule minecraft:send_command_feedback false
+gamerule minecraft:locator_bar false
 
 # objectives
 scoreboard objectives add math dummy
@@ -31,7 +31,14 @@ scoreboard players set #100 math 100
 scoreboard players set #256 math 256
 scoreboard players set #360 math 360
 scoreboard players set #1000 math 1000
+scoreboard players set #100000 math 100000
 scoreboard players set #playercount math 0
+scoreboard players set #avg_COUNT math 0
+scoreboard players set #TPS math 2000
+
+# real-time TPS timer
+stopwatch remove code:tps
+stopwatch create code:tps
 scoreboard objectives add plot.x dummy
 scoreboard objectives add plot.y dummy
 
@@ -125,8 +132,8 @@ team modify d_tester displayName "ᴛᴇѕᴛᴇʀ"
 team add e_mm
 team modify e_mm collisionRule never
 team modify e_mm prefix [{"text":"ᴍᴍ💰 ","color":"#00AA00"},{"text":"| ",color:dark_gray}]
-team modify f_xm deathMessageVisibility never
-team modify f_xm displayName "ᴍᴍ💰"
+team modify e_mm deathMessageVisibility never
+team modify e_mm displayName "ᴍᴍ💰"
 
 team add f_xm
 team modify f_xm collisionRule never
@@ -138,7 +145,7 @@ team add g_fm2
 team modify g_fm2 collisionRule never
 team modify g_fm2 prefix [{"text":"ꜰᴍ","color":"#8888FF"},{"text":"² ","color":"#BA094A"},{text:"| ",color:dark_gray}]
 team modify g_fm2 deathMessageVisibility never
-team modify g_fm2 displayName "ᴛᴇѕᴛᴇʀ"
+team modify g_fm2 displayName "ꜰᴍ²"
 
 team add h_fm
 team modify h_fm collisionRule never

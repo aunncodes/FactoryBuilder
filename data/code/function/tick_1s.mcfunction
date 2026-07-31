@@ -11,18 +11,14 @@ tag @e[type=item_display,tag=item.cut,tag=item.moved,x=0] remove item.cut
 tag @e[type=item_display,tag=item.moved,x=0] remove item.moved
 function code:tick_1s.item_stagger
 
-# calculate mspt average
-scoreboard players operation #round_factor math = #avg_COUNT math
-scoreboard players add #round_factor math 1
-scoreboard players operation #round_factor math /= #2 math
-scoreboard players operation #avg_MSPT math += #round_factor math
-scoreboard players operation #avg_MSPT math /= #avg_COUNT math
-# calculate TPS
-scoreboard players set #TPS math 100000
-scoreboard players operation #TPS math /= #avg_MSPT math
-execute if score #TPS math matches 2000.. run scoreboard players set #TPS math 2000
-# reset averages
-scoreboard players set #avg_MSPT math 0
+# calculate TPS from actual ticks over elapsed real time
+execute store result score #elapsed_ms math run stopwatch query code:tps 1000
+stopwatch restart code:tps
+execute if score #elapsed_ms math matches 1.. run scoreboard players operation #TPS math = #avg_COUNT math
+execute if score #elapsed_ms math matches 1.. run scoreboard players operation #TPS math *= #100000 math
+execute if score #elapsed_ms math matches 1.. run scoreboard players operation #TPS math /= #elapsed_ms math
+execute unless score #elapsed_ms math matches 1.. run scoreboard players set #TPS math 2000
+execute if score #TPS math matches 2001.. run scoreboard players set #TPS math 2000
 scoreboard players set #avg_COUNT math 0
 
 scoreboard players add @a stats.playtime 1
