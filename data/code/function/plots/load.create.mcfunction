@@ -1,3 +1,4 @@
+forceload add ~ ~
 fill ~ ~ ~ ~15 ~ ~15 grass_block
 fill ~1 ~ ~1 ~14 ~ ~14 polished_andesite
 fill ~2 ~ ~2 ~13 ~ ~13 stone

@@ -12,6 +12,7 @@ $execute if score #backup math matches 0 run kill @e[type=item_display,tag=item,
 # remove plot
 $execute if score #backup math matches 0 positioned $(x) 0 $(y) run setblock ~1 ~1 ~1 air
 $execute if score #backup math matches 0 positioned $(x) 0 $(y) run fill ~ ~ ~ ~15 ~ ~15 air
+$execute if score #backup math matches 0 positioned $(x) 0 $(y) run forceload remove ~ ~
 
 # run destroied
 execute if score #backup math matches 0 run function code:destroied
