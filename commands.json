@@ -1,0 +1,432 @@
+{
+  "type": "root",
+  "children": {
+    "playerlist": {
+      "type": "literal",
+      "children": {
+        "players": {
+          "type": "argument",
+          "parser": "minecraft:entity",
+          "properties": {
+            "amount": "multiple",
+            "type": "players"
+          },
+          "children": {
+            "header": {
+              "type": "literal",
+              "children": {
+                "set": {
+                  "type": "literal",
+                  "children": {
+                    "value": {
+                      "type": "argument",
+                      "parser": "brigadier:string",
+                      "properties": {
+                        "type": "greedy"
+                      },
+                      "executable": true
+                    }
+                  }
+                },
+                "clear": {
+                  "type": "literal",
+                  "executable": true
+                }
+              }
+            },
+            "footer": {
+              "type": "literal",
+              "children": {
+                "set": {
+                  "type": "literal",
+                  "children": {
+                    "value": {
+                      "type": "argument",
+                      "parser": "brigadier:string",
+                      "properties": {
+                        "type": "greedy"
+                      },
+                      "executable": true
+                    }
+                  }
+                },
+                "clear": {
+                  "type": "literal",
+                  "executable": true
+                }
+              }
+            }
+          }
+        }
+      },
+      "executable": true
+    },
+    "inventory": {
+      "type": "literal",
+      "children": {
+        "targets": {
+          "type": "argument",
+          "parser": "minecraft:entity",
+          "properties": {
+            "amount": "multiple",
+            "type": "players"
+          },
+          "children": {
+            "close": {
+              "type": "literal",
+              "executable": true
+            },
+            "enderchest": {
+              "type": "literal",
+              "children": {
+                "targetPlayer": {
+                  "type": "argument",
+                  "parser": "minecraft:entity",
+                  "properties": {
+                    "amount": "single",
+                    "type": "players"
+                  },
+                  "children": {
+                    "title": {
+                      "type": "argument",
+                      "parser": "brigadier:string",
+                      "properties": {
+                        "type": "greedy"
+                      },
+                      "executable": true
+                    }
+                  },
+                  "executable": true
+                }
+              },
+              "executable": true
+            },
+            "block": {
+              "type": "literal",
+              "children": {
+                "location": {
+                  "type": "argument",
+                  "parser": "minecraft:block_pos",
+                  "children": {
+                    "title": {
+                      "type": "argument",
+                      "parser": "brigadier:string",
+                      "properties": {
+                        "type": "greedy"
+                      },
+                      "executable": true
+                    }
+                  },
+                  "executable": true
+                }
+              }
+            },
+            "entity": {
+              "type": "literal",
+              "children": {
+                "entity": {
+                  "type": "argument",
+                  "parser": "minecraft:entity",
+                  "properties": {
+                    "amount": "single",
+                    "type": "entities"
+                  },
+                  "children": {
+                    "title": {
+                      "type": "argument",
+                      "parser": "brigadier:string",
+                      "properties": {
+                        "type": "greedy"
+                      },
+                      "executable": true
+                    }
+                  },
+                  "executable": true
+                }
+              }
+            }
+          }
+        }
+      },
+      "executable": true
+    },
+    "edit": {
+      "type": "literal",
+      "children": {
+        "maxPlayers": {
+          "type": "literal",
+          "children": {
+            "maxPlayers": {
+              "type": "argument",
+              "parser": "brigadier:integer",
+              "properties": {
+                "min": 1,
+                "max": 30
+              },
+              "executable": true
+            }
+          }
+        },
+        "version": {
+          "type": "literal",
+          "children": {
+            "1.21.10": {
+              "type": "literal",
+              "executable": true
+            }
+          }
+        },
+        "saveScoreboardsAndPlayers": {
+          "type": "literal",
+          "children": {
+            "value": {
+              "type": "argument",
+              "parser": "brigadier:bool",
+              "executable": true
+            }
+          }
+        },
+        "icon": {
+          "type": "literal",
+          "children": {
+            "item": {
+              "type": "argument",
+              "parser": "minecraft:item_stack",
+              "executable": true
+            }
+          }
+        },
+        "name": {
+          "type": "literal",
+          "children": {
+            "value": {
+              "type": "argument",
+              "parser": "brigadier:string",
+              "properties": {
+                "type": "greedy"
+              },
+              "executable": true
+            }
+          }
+        },
+        "description": {
+          "type": "literal",
+          "children": {
+            "value": {
+              "type": "argument",
+              "parser": "brigadier:string",
+              "properties": {
+                "type": "greedy"
+              },
+              "executable": true
+            }
+          }
+        }
+      }
+    },
+    "stopinstance": {
+      "type": "literal",
+      "children": {
+        "worldUUID": {
+          "type": "argument",
+          "parser": "brigadier:string",
+          "properties": {
+            "type": "word"
+          },
+          "executable": true
+        }
+      },
+      "executable": true
+    },
+    "restartinstance": {
+      "type": "literal",
+      "children": {
+        "worldUUID": {
+          "type": "argument",
+          "parser": "brigadier:string",
+          "properties": {
+            "type": "word"
+          },
+          "executable": true
+        }
+      },
+      "executable": true
+    },
+    "http": {
+      "type": "literal",
+      "children": {
+        "body": {
+          "type": "literal",
+          "children": {
+            "value": {
+              "type": "literal",
+              "children": {
+                "value": {
+                  "type": "argument",
+                  "parser": "brigadier:string",
+                  "properties": {
+                    "type": "phrase"
+                  },
+                  "redirect": [
+                    "http"
+                  ]
+                }
+              }
+            },
+            "storage": {
+              "type": "literal",
+              "children": {
+                "storage_namespace": {
+                  "type": "argument",
+                  "parser": "minecraft:resource_location",
+                  "children": {
+                    "storage_path": {
+                      "type": "argument",
+                      "parser": "minecraft:nbt_path",
+                      "redirect": [
+                        "http"
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "headers": {
+          "type": "literal",
+          "children": {
+            "value": {
+              "type": "literal",
+              "children": {
+                "value": {
+                  "type": "argument",
+                  "parser": "minecraft:nbt_compound_tag",
+                  "redirect": [
+                    "http"
+                  ]
+                }
+              }
+            },
+            "storage": {
+              "type": "literal",
+              "children": {
+                "storage_namespace": {
+                  "type": "argument",
+                  "parser": "minecraft:resource_location",
+                  "children": {
+                    "storage_path": {
+                      "type": "argument",
+                      "parser": "minecraft:nbt_path",
+                      "redirect": [
+                        "http"
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "callback": {
+          "type": "literal",
+          "children": {
+            "function": {
+              "type": "argument",
+              "parser": "minecraft:function",
+              "redirect": [
+                "http"
+              ]
+            }
+          }
+        },
+        "store": {
+          "type": "literal",
+          "children": {
+            "storage_namespace": {
+              "type": "argument",
+              "parser": "minecraft:resource_location",
+              "children": {
+                "storage_path": {
+                  "type": "argument",
+                  "parser": "minecraft:nbt_path",
+                  "redirect": [
+                    "http"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "send": {
+          "type": "literal",
+          "children": {
+            "url": {
+              "type": "argument",
+              "parser": "brigadier:string",
+              "properties": {
+                "type": "phrase"
+              },
+              "children": {
+                "method": {
+                  "type": "argument",
+                  "parser": "brigadier:string",
+                  "properties": {
+                    "type": "word"
+                  },
+                  "executable": true
+                }
+              },
+              "executable": true
+            }
+          }
+        }
+      },
+      "executable": true
+    },
+    "visibility": {
+      "type": "literal",
+      "children": {
+        "targets": {
+          "type": "argument",
+          "parser": "minecraft:entity",
+          "properties": {
+            "amount": "multiple",
+            "type": "players"
+          },
+          "children": {
+            "hide": {
+              "type": "literal",
+              "children": {
+                "entities": {
+                  "type": "argument",
+                  "parser": "minecraft:entity",
+                  "properties": {
+                    "amount": "multiple",
+                    "type": "entities"
+                  },
+                  "executable": true
+                }
+              }
+            },
+            "show": {
+              "type": "literal",
+              "children": {
+                "entities": {
+                  "type": "argument",
+                  "parser": "minecraft:entity",
+                  "properties": {
+                    "amount": "multiple",
+                    "type": "entities"
+                  },
+                  "executable": true
+                }
+              }
+            }
+          }
+        }
+      },
+      "executable": true
+    }
+  }
+}

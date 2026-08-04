@@ -1,5 +1,11 @@
 {
-   "env": {
-      "gameVersion": "26.2"
-   }
+    "env": {
+        "gameVersion": "26.2",
+        "mcmetaSummaryOverrides": {
+            "commands": {
+                "path": "commands.json", 
+                "replace": false
+            }
+        }
+    }
 }

@@ -24,8 +24,7 @@ execute store result storage player player.plot.y int 1 run scoreboard players g
 execute store result storage player player.plot.id int 1 run scoreboard players get @s id
 
 # update player name
-execute if data entity @s bukkit run data modify storage player player.name set from entity @s bukkit.lastKnownName
-execute unless data entity @s bukkit positioned 0 0 0 run function code:joined.vanilla_name
+execute positioned 0 0 0 run function code:joined.vanilla_name
 
 function code:storage/save
 
@@ -70,6 +69,7 @@ clear @s written_book
 clear @s wooden_pickaxe
 playerlist @s header set <gradient:#ffaa00:#ffe500><bold>Fᴀᴄᴛᴏʀʏ</gradient><gradient:#aaaaaa:#e5e5e5><bold>Bᴜɪʟᴅᴇʀ</gradient>
 execute if entity @n[type=marker,tag=devbranch,x=0] run function code:joined.devbranch
+playerlist @s footer set <gray>Made with <red>❤</red> by <gold><b>devilexe3</b></gold><br>and maintained by <gold><b>Aunn</b></gold></gray>
 
 # enable triggers
 execute unless score @s settings.chat_notifications matches 0.. run scoreboard players set @s settings.chat_notifications 0
